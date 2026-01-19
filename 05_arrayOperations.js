@@ -1,46 +1,57 @@
-
 /**
  * Utiliser la fonction .map sur le tableau passé en paramètre
  * pour retourner un nouveau tableau avec les valeurs multipliées par 2
- * 
- * contraintes: 
+ *
+ * contraintes:
  *   - Les mots clées for, while, do while sont interdits
  *   - les mots clées function et return sont interdits
  *   - Vous ne pouvez pas utiliser de variable
- * 
-  */
+ *
+ */
+const tableau1 = [1, 2, 3, 4, 5, 6]
+const tableau2 = ['Attention', 'Deux', 'Trois', 'Assez']
+const tableau3 = [
+    {id: 1, name: 'John'},
+    {id: 2, name: 'Doe'},
+    {id: 3, name: 'Foo'},
+    {id: 4, name: 'Bar'},
+]
 
-const multiplyByTwo = null;
+const multiplyByTwo = tab => tab.map(x => x * 2);
 
+console.log(multiplyByTwo(tableau1))
 
 /**
  * Utiliser la fonction .filter sur le tableau passé en paramètre
  * retourne un nouveau tableau avec uniquement les nom qui commencent par la lettre "A"
- * 
- * contraintes: 
+ *
+ * contraintes:
  *   - Les mots clées for, while, do while sont interdits
  *   - les mots clées function et return sont interdits
  *   - Vous ne pouvez pas utiliser de variable (autre que l'argument de la fonction)
-  */
+ */
 
-const filterNameStartByA = null;
+const filterNameStartByA = tab => tab.filter(x => x.startsWith('A'));
+
+console.log(filterNameStartByA(tableau2))
 
 /**
  * Utiliser la fonction .reduce sur le tableau passé en paramètre
  * retourne la somme des valeurs du tableau
- * 
- * contraintes: 
+ *
+ * contraintes:
  *   - Les mots clées for, while, do while sont interdits
  *   - les mots clées function et return sont interdits
  *   - Vous ne pouvez pas utiliser de variable (autre que l'argument de la fonction)
-  */
+ */
 
-const sum = null;
+const sum = tab => tab.reduce((acc, x) => acc + x, 0);
 
+console.log(sum(tableau1))
 /**
  * Utiliser la fonction .find sur le tableau passé en paramètre
  * retourne l'utilisateur qui a l'id passé en 2e paramètre
- * 
+ *
  * exemple d'entrée:
  * [
  *  {id: 1, name: 'John'},
@@ -49,14 +60,14 @@ const sum = null;
  *  {id: 4, name: 'Bar'},
  * ], 3
  * retour attendu: "Foo"
- * 
- * contraintes: 
+ *
+ * contraintes:
  *   - Les mots clées for, while, do while sont interdits
  *   - les mots clées function et return sont interdits
  *   - Vous ne pouvez pas utiliser de variable (autre que l'argument de la fonction)
-  */
+ */
 
-const findUserById = null;
-
+const findUserById = (tab, id) => tab.find(x => x.id === id).name;
+console.log(findUserById(tableau3, 3))
 
 module.exports = {multiplyByTwo, filterNameStartByA, sum, findUserById};

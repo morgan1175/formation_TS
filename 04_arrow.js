@@ -1,23 +1,27 @@
-
 /**
  * Déclarer une fonction fléchée qui renvoi l'argument + 1
  * Le return est explicite
- * 
- * contrainte: 
+ *
+ * contrainte:
  *   - le mot clée "function" est interdis
  */
 
-let arrow1 = () => {}
+let arrow1 = (x) => {
+    return x + 1
+}
 
 /**
  * Déclarer une fonction fléchée qui renvoi l'argument + 1
  * Le return est implicite
- * 
- * contrainte: 
+ *
+ * contrainte:
  *   - le mot clée "function" est interdis
  *   - le mot clée "return" est interdis
  */
 
-let arrow2 = () => {}
+let arrow2 = (x) => x + 1
+
+console.log(arrow1(10))
+console.log(arrow2(20))
 
 module.exports = {arrow1, arrow2};
