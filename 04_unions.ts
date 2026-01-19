@@ -27,14 +27,20 @@
 // TODO: Définir le type User et implémenter les fonctions
 
 export type User = {
-    id: number || string,
-    username: string
+    id: number | string,
+    username: string | null
 }
 
-export function formatId(id: any): any {
-  throw new Error("Not implemented");
+const user1: User = {id:1 , username:"morgan"}
+const user2: User = {id:"2" , username:"morgan2"}
+
+export function formatId(id: number | string): any {
+    return typeof id==="number" ? `ID-${id}` : `${id}`
 }
 
 export function getUsername(user: any): any {
-  throw new Error("Not implemented");
+    throw new Error("Not implemented");
 }
+
+console.log(formatId(user1.id))
+console.log(formatId(user2.id))
