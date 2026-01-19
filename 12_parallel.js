@@ -23,7 +23,7 @@ const urls = [
     'https://jsonplaceholder.typicode.com/todos/3'
 ]
 
-    return Promise.all(urls.map(() => url => apiResponse(url)))
+    return Promise.all(urls.map(url => apiResponse(url)))
 }
 
 parallel().then(results => {
