@@ -1,57 +1,79 @@
 /**
 
-Exercice : Trouver la fréquence des mots dans une phrase
+ Exercice : Trouver la fréquence des mots dans une phrase
 
-Objectif :
-Écrire une fonction qui prend en entrée une chaîne de caractères et qui retourne un objet où les clés sont les mots de la phrase et les valeurs sont le nombre de fois où ces mots apparaissent.
+ Objectif :
+ Écrire une fonction qui prend en entrée une chaîne de caractères et qui retourne un objet où les clés sont les mots de la phrase et les valeurs sont le nombre de fois où ces mots apparaissent.
 
-Consignes :
+ Consignes :
 
-Convertir la phrase en tableau de mots.
-Utiliser la méthode .reduce() pour compter la fréquence des mots.
-Retourner l'objet avec les fréquences.
+ Convertir la phrase en tableau de mots.
+ Utiliser la méthode .reduce() pour compter la fréquence des mots.
+ Retourner l'objet avec les fréquences.
 
-ex: la pomme est rouge et la banane est jaune
-{
-  "la": 2,
-  "pomme": 1,
-  "est": 2,
-  "rouge": 1,
-  "et": 1,
-  "banane": 1,
-  "jaune": 1
+ ex: la pomme est rouge et la banane est jaune
+ {
+ "la": 2,
+ "pomme": 1,
+ "est": 2,
+ "rouge": 1,
+ "et": 1,
+ "banane": 1,
+ "jaune": 1
+ }
+
+ */
+const phrase = 'la pomme est rouge et la banane est jaune'
+
+const countWords = (sentence) => {
+
+    const frequenceMots = sentence.split(' ').reduce((acc, mot) => {
+        acc[mot] = (acc[mot] || 0) + 1
+        return acc
+    }, {})
+    return frequenceMots
 }
+
+console.log(countWords(phrase));
+
+/**
+ Exercice : Trier un objet par valeur
+
+ Objectif :
+ Écrire une fonction qui prend en entrée un objet et qui retourne un nouvel objet dont les propriétés sont triées en fonction de leurs valeurs, en ordre croissant.
+
+ exemple:
+ {
+ "pommes": 3,
+ "bananes": 1,
+ "cerises": 8
+ };
+
+ ->
+
+ {
+ "bananes": 1,
+ "pommes": 3,
+ "cerises": 8
+ }
 
  */
 
-const countWords = (sentence) => {
-};
-console.log(countWords("la pomme est rouge et la banane est jaune"));
-
-/**
-Exercice : Trier un objet par valeur
-
-Objectif :
-Écrire une fonction qui prend en entrée un objet et qui retourne un nouvel objet dont les propriétés sont triées en fonction de leurs valeurs, en ordre croissant.
-
-exemple:
-{
-  "pommes": 3,
-  "bananes": 1,
-  "cerises": 8
-};
-
--> 
-
-{
-  "bananes": 1,
-  "pommes": 3,
-  "cerises": 8
+const objetATrier = {
+    "bananes": 1,
+    "pommes": 3,
+    "cerises": 8
 }
 
-*/
-
 const sortObjectByValue = (obj) => {
-};
+    return Object.entries(obj)
+        .sort((a, b) => a[1] - b[1])
+        .reduce((acc, [key, value]) => {
+            acc[key] = value
+            return acc
+        }, {})
+}
+
+console.log(sortObjectByValue(objetATrier))
 
 module.exports = {countWords, sortObjectByValue};
