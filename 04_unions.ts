@@ -26,7 +26,10 @@
 
 // TODO: Définir le type User et implémenter les fonctions
 
-export type User = { username: any };
+export type User = {
+    id: number || string,
+    username: string
+}
 
 export function formatId(id: any): any {
   throw new Error("Not implemented");
