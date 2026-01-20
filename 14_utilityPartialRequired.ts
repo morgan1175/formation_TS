@@ -26,18 +26,38 @@
 
 // TODO: Définir le type UserProfile
 
+const profile = {username: "john", email: "john@test.com", age: 25, bio: "Dev"};
+
 export type UserProfile = {
-  // À compléter
-};
+    username: string
+    email: string
+    age: number
+    bio: string
+}
+
+export type PartialUser = Partial<UserProfile>
 
 // TODO: Implémenter updateProfile
 
-export function updateProfile(profile: any, updates: any): any {
-  throw new Error("Not implemented");
+export function updateProfile(profile: UserProfile, updates: PartialUser): UserProfile {
+    return {
+        ...profile,
+        ...updates
+    }
 }
+
+console.log(updateProfile(profile, {age: 26}))
 
 // TODO: Implémenter validateCompleteProfile
 
-export function validateCompleteProfile(profile: any): any {
-  throw new Error("Not implemented") ;
+export function validateCompleteProfile(profile: PartialUser): boolean {
+    return (
+        profile.username !== undefined &&
+        profile.email !== undefined &&
+        profile.age !== undefined &&
+        profile.bio !== undefined
+    )
 }
+
+console.log(validateCompleteProfile({username: "john"}))
+console.log(validateCompleteProfile(profile))
