@@ -21,11 +21,18 @@
 // TODO: Définir le type Book
 
 export type Book = {
-  // À compléter
-};
+    title: string
+    author: string
+    publishedYear?: number
+}
 
 // TODO: Implémenter formatBook
 
 export function formatBook(book: Book): string {
-  throw new Error("Not implemented");
+    return book.publishedYear ?
+        `${book.title} par ${book.author} (${book.publishedYear})` :
+        `${book.title} par ${book.author}`
 }
+
+console.log(formatBook({ title: "1984", author: "George Orwell", publishedYear: 1949 }))
+console.log(formatBook({ title: "Le Petit Prince", author: "Saint-Exupéry" }))
