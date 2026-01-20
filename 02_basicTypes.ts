@@ -32,7 +32,7 @@ export function getFullName(firstName: string, lastName: string): string {
 }
 
 export function greet(name?: string): string {
-    return name ? `Hello ${name}!` : "Hello!"
+    return name ? `Hello, ${name}!` : "Hello!"
 }
 
 console.log(add(10,11))

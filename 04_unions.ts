@@ -40,7 +40,7 @@ export function formatId(id: number | string): number | string {
 }
 
 export function getUsername(user: User): string | null {
-    return user.username ? user.username.toUpperCase() : "INVITE"
+    return user.username ? user.username.toUpperCase() : "INVITÉ"
 }
 
 console.log(formatId(user1.id))
