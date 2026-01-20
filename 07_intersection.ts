@@ -16,9 +16,11 @@
 
 // TODO: Définir les types et implémenter createUser
 
-export type HasEmail = any
-export type HasRole = any
+export type HasEmail = { email: string }
+export type HasRole = { role: string }
 
-export function createUser(info: any): string {
-  throw new Error("Not implemented");
+export function createUser(info: HasEmail & HasRole): string {
+    return `Utilisateur : ${info.email}, rôle : ${info.role}`
 }
+
+console.log(createUser({email: 'm@test.fr', role: 'ADMIN'}))
