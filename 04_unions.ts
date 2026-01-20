@@ -31,16 +31,19 @@ export type User = {
     username: string | null
 }
 
-const user1: User = {id:1 , username:"morgan"}
-const user2: User = {id:"2" , username:"morgan2"}
+const user1: User = {id: 1, username: "morgan"}
+const user2: User = {id: "2", username: "morgan2"}
+const user3: User = {id: 3, username: null}
 
-export function formatId(id: number | string): any {
-    return typeof id==="number" ? `ID-${id}` : `${id}`
+export function formatId(id: number | string): number | string {
+    return typeof id === "number" ? `ID-${id}` : `${id}`
 }
 
-export function getUsername(user: any): any {
-    throw new Error("Not implemented");
+export function getUsername(user: User): string | null {
+    return user.username ? user.username.toUpperCase() : "INVITE"
 }
 
 console.log(formatId(user1.id))
 console.log(formatId(user2.id))
+console.log(getUsername(user1))
+console.log(getUsername(user3))
