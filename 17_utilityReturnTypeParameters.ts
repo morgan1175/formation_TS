@@ -30,7 +30,7 @@ export function createUser(name: string, age: number, active: boolean) {
 
 // TODO: Définir les types avec ReturnType et Parameters
 
-export type User = unknown; 
+export type User = ReturnType<typeof createUser>
 
 export type CreateUserParams = unknown; 
 

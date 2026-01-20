@@ -53,7 +53,7 @@ export function toPreview(article: Article): ArticlePreview {
 
 export function createArticle(data: ArticleCreate): Article {
     return {
-        id: 10,
+        id: Math.random(),
         title: data.title,
         content: data.content,
         author: data.author,
