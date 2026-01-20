@@ -17,11 +17,17 @@
 // TODO: Définir le type Car
 
 export type Car = {
-  // À compléter
-};
+    brand: string
+    model: string
+    year: number
+}
+
+const car1: Car = {brand: "FORD", model: "SMax", year: 2019}
 
 // TODO: Implémenter getCarDescription
 
 export function getCarDescription(car: Car): string {
-  throw new Error("Not implemented");
+    return `Voiture: ${car.brand} ${car.model} ${car.year}`
 }
+
+console.log(getCarDescription(car1))

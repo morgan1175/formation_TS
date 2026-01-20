@@ -24,7 +24,7 @@ export function add(a: number, b: number): number {
 }
 
 export function isAdult(age: number): boolean {
-    return age > 18
+    return age >= 18
 }
 
 export function getFullName(firstName: string, lastName: string): string {
