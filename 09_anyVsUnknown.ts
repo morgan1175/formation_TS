@@ -31,9 +31,16 @@
 // TODO: Implémenter les fonctions
 
 export function processUnknown(value: unknown): number {
-  throw new Error("Not implemented");
+    return (typeof value === "string") ? value.length : 0
 }
 
+console.log(processUnknown("je suis une chaine de caractères....)"))
+console.log(processUnknown(123587410258))
+
 export function safeParseNumber(value: unknown): number | null {
-  throw new Error("Not implemented");
+    return Number(value) ? Number(value) : null
 }
+
+console.log(safeParseNumber(125874))
+console.log(safeParseNumber("123456789"))
+console.log(safeParseNumber("hufieufh&r"))
