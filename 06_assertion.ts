@@ -16,7 +16,8 @@
 // TODO: Définir le type JsonUser et implémenter parseJsonUser
 
 export type JsonUser = { name: string; age: number };
+console.log(parseJsonUser('{"name": "morgan", "age": 50}'))
 
 export function parseJsonUser(json: string): JsonUser {
-  throw new Error("Not implemented");
+    return JSON.parse(json) as JsonUser
 }
