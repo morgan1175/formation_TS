@@ -20,13 +20,13 @@
 // TODO: Définir l'enum Color et implémenter getColorCode
 
 export enum Color {
-    Red ,
+    Red,
     Green,
     Blue
 }
 
 export function getColorCode(color: Color): string {
-    switch(color) {
+    switch (color) {
         case Color.Blue:
             return "#0000FF"
             break
@@ -35,7 +35,6 @@ export function getColorCode(color: Color): string {
             break
         default:
             return "#FF0000"
-
     }
 }
 
