@@ -25,21 +25,24 @@
 
 // Fonction fournie - NE PAS MODIFIER
 export function createUser(name: string, age: number, active: boolean) {
-  return { id: Math.random(), name, age, active, createdAt: new Date() };
+    return {id: Math.random(), name, age, active, createdAt: new Date()};
 }
 
 // TODO: Définir les types avec ReturnType et Parameters
 
 export type User = ReturnType<typeof createUser>
 
-export type CreateUserParams = unknown; 
+export type CreateUserParams = Parameters<typeof createUser>
 
 // TODO: Implémenter les fonctions
 
 export function cloneUser(user: User): User {
-  throw new Error("Not implemented");
+    return {
+        ...user,
+        id: Math.random()
+    }
 }
 
 export function createUserFromArray(params: CreateUserParams): User {
-  throw new Error("Not implemented");
+    return createUser(...params)
 }
