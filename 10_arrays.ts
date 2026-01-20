@@ -24,10 +24,21 @@
 
 // TODO: Implémenter les fonctions
 
-export function sumNumbers(numbers: any): any {
-  throw new Error("Not implemented");
+const listeNumbers: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+const listeVide: number[] = []
+const listeWord1: string[] = ["hi", "hello", "world"]
+const listeWord2: string[] = ["a", "ab", "abc"]
+
+export function sumNumbers(numbers: number[]): number {
+    return numbers.length > 0 ? numbers.reduce((acc, x) => acc + x, 0) : 0
 }
 
-export function filterLongWords(words: any, minLength: any): any {
-  throw new Error("Not implemented");
+console.log(sumNumbers(listeNumbers))
+console.log(sumNumbers(listeVide))
+
+export function filterLongWords(words: string[], minLength: number): string[] {
+    return words.filter(word => word.length >= minLength)
 }
+
+console.log(filterLongWords(listeWord1, 4))
+console.log(filterLongWords(listeWord2, 2))
