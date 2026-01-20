@@ -16,7 +16,18 @@
  */
 
 // TODO: Implémenter fetchUsername
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 
-export async function fetchUsername(userId: number): Promise<any> {
-  throw new Error("Not implemented");
+export async function fetchUsername(userId: number): Promise<string> {
+    return fetch(`https://jsonplaceholder.typicode.com/users/${userId}`)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('utilisateur introuvable')
+            }
+            return response.json()
+        })
+        .then(user => user.username as string)
 }
+
+fetchUsername(1).then(username => console.log(username))
+fetchUsername(2).then(username => console.log(username))
